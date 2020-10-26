@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1312</width>
+    <height>511</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButtonAdd">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>430</y>
+      <width>71</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Agregar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonStart">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>430</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Iniciar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCurrentProcess">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>10</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Proceso actual</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="readyProcessesTable">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>271</width>
+      <height>161</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelReadyProcesses">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Procesos listos</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="finishedProcessesTable">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>20</y>
+      <width>281</width>
+      <height>381</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelFinishedProcesses">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>0</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Terminados</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="blockedProcessesTable">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>331</width>
+      <height>161</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelBlockedProcesses">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Procesos bloqueados</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_1">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>20</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_2">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>20</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_3">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>20</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_4">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>20</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_5">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>50</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_6">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>50</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_7">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>50</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_8">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>50</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_9">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>80</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_10">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>80</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_11">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>80</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_12">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>80</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_13">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>110</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_14">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>110</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_15">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>110</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_16">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>110</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_17">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>140</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_18">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>140</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_19">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>140</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_20">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>140</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_25">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>200</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_21">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>170</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_22">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>170</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_23">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>170</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_24">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>170</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_26">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>200</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_27">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>200</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_28">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>200</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_29">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>230</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_30">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>230</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_31">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>230</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_32">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>230</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_33">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>260</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_34">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>260</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_35">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>260</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Contador:</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>430</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Procesos Nuevos:</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>200</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>60</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Operacion:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TME:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>120</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TT:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>150</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TR:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>180</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quantum:</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_3">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>180</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="OpLabel">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="IDLabel">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>60</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TMELabel">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>90</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TTLabel">
+    <property name="geometry">
+     <rect>
+      <x>326</x>
+      <y>120</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TRLabel">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>150</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>290</y>
+      <width>381</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelNextSuspended">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>380</y>
+      <width>461</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1312</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuControl">
+    <property name="title">
+     <string>Opciones</string>
+    </property>
+    <addaction name="actionPausa"/>
+    <addaction name="actionContinuar"/>
+    <addaction name="actionError"/>
+    <addaction name="actionInterrupci_n"/>
+    <addaction name="actionNuevo"/>
+    <addaction name="actionBPC"/>
+    <addaction name="actionTablaP"/>
+    <addaction name="actionRegresa"/>
+    <addaction name="actionSuspendido"/>
+   </widget>
+   <addaction name="menuControl"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionPausa">
+   <property name="text">
+    <string>Pausa</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="actionContinuar">
+   <property name="text">
+    <string>Continuar</string>
+   </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
+  </action>
+  <action name="actionError">
+   <property name="text">
+    <string>Error</string>
+   </property>
+   <property name="shortcut">
+    <string>W</string>
+   </property>
+  </action>
+  <action name="actionInterrupci_n">
+   <property name="text">
+    <string>Interrupción</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+  </action>
+  <action name="actionNuevo">
+   <property name="text">
+    <string>Nuevo</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="actionBPC">
+   <property name="text">
+    <string>BCP</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
+   </property>
+  </action>
+  <action name="actionTablaP">
+   <property name="text">
+    <string>TablaP</string>
+   </property>
+   <property name="shortcut">
+    <string>T</string>
+   </property>
+  </action>
+  <action name="actionRegresa">
+   <property name="text">
+    <string>Regresa</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionSuspendido">
+   <property name="text">
+    <string>Suspendido</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
