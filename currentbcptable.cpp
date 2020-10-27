@@ -1,8 +1,6 @@
 #include "currentbcptable.h"
 #include "ui_currentbcptable.h"
 
-#define ERROR 99
-
 currentBCPTable::currentBCPTable(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::currentBCPTable)
@@ -137,7 +135,7 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("FINALIZADO"));
         ui->BCPTable->setItem(row,2,new QTableWidgetItem(aux->process.operation));
-        if(aux->process.status == ERROR)
+        if(aux->process.status == 99)
             ui->BCPTable->setItem(row,3,new QTableWidgetItem("ERROR"));
         else
             ui->BCPTable->setItem(row,3,new QTableWidgetItem(QString::number(aux->process.result)));
