@@ -2,10 +2,10 @@
 #define MEMORY_H
 
 
-class memory
+class Memory
 {
 public:
-    memory();
+    Memory();
 
     int type,ID,value;
 };
