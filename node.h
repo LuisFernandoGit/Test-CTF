@@ -1,17 +1,17 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "proceso.h"
+#include <proceso.h>
 
-class node
+class Node
 {
 public:
 
     proceso process;
 
-    node *next, *previous;
+    Node *next, *previous;
 
-    node(proceso process);
+    Node(proceso process);
     friend class list;
 };
 
