@@ -1,21 +1,21 @@
 #ifndef PROCESSESLIST_H
 #define PROCESSESLIST_H
 
-#include "proceso.h"
-#include "node.h"
+#include <proceso.h>
+#include <node.h>
 
-class processesList
+class ProcessesList
 {
 public:
-    node *first, *last;
+    Node *first, *last;
 
     void setUp();
-    void push_back(proceso process);
-    proceso pop();
+    void push_back(Proceso process);
+    Proceso pop();
     bool empty();
     int size();
-    void erase(proceso process);
-    proceso popPos(proceso process);
+    void erase(Proceso process);
+    Proceso popPos(Proceso process);
 
 };
 
