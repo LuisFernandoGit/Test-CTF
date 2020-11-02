@@ -1,29 +1,35 @@
-#include "processeslist.h"
+#include <processeslist.h>
 
-void processesList::setUp()
+void ProcessesList::setUp()
 {
     first = last = nullptr;
 }
 
-void processesList::push_back(proceso process)
+void ProcessesList::push_back(Proceso process)
 {
-    node *newProcess = new node(process);
+    Node *newProcess = new Node(process);
     if(first == nullptr)
+    {
         first = last = newProcess;
-    else{
+    }
+    else
+    {
         newProcess->previous = last;
         last->next = newProcess;
         last = newProcess;;
     }
 }
 
-proceso processesList::pop()
+Proceso ProcessesList::pop()
 {
-    node *temp = first;
-    proceso process = first->process;
+    Node *temp = first;
+    Proceso process = first->process;
     if (first == last)
+    {
         first = last = nullptr;
-    else{
+    }
+    else
+    {
         first = first->next;
         first->previous = nullptr;
     }
@@ -31,36 +37,47 @@ proceso processesList::pop()
     return  process;
 }
 
-bool processesList::empty()
+bool ProcessesList::empty()
 {
     if(first)
+    {
         return false;
+    }
     else
+    {
         return true;
+    }
 }
 
-int processesList::size()
+int ProcessesList::size()
 {
     int size = 0;
-    node *aux = first;
-    while(aux){
+    Node *aux = first;
+    while(aux)
+    {
         size++;
         aux = aux->next;
     }
     return size;
 }
 
-void processesList::erase(proceso process)
+void ProcessesList::erase(Proceso process)
 {
-    node *aux = first;
-    while(aux){
+    Node *aux = first;
+    while(aux)
+    {
         if(aux->process.ID == process.ID)
+        {
             break;
+        }
         aux = aux->next;
     }
     if(aux == first && aux == last)
+    {
         first = last = nullptr;
-    else if(aux == first){
+    }
+    else if(aux == first)
+    {
         first = first->next;
         first->previous = nullptr;
     }
@@ -75,25 +92,33 @@ void processesList::erase(proceso process)
     delete (aux);
 }
 
-proceso processesList::popPos(proceso process)
+Proceso ProcessesList::popPos(Proceso process)
 {
-    node *aux = first;
-    while(aux){
+    Node *aux = first;
+    while(aux)
+    {
         if(aux->process.ID == process.ID)
+        {
             break;
+        }
         aux = aux->next;
     }
     if(aux == first && aux == last)
+    {
         first = last = nullptr;
-    else if(aux == first){
+    }
+    else if(aux == first)
+    {
         first = first->next;
         first->previous = nullptr;
     }
-    else if(aux == last){
+    else if(aux == last)
+    {
         last = last->previous;
         last = last->next;
     }
-    else{
+    else
+    {
         aux->previous->next = aux->next;
         aux->next->previous = aux->previous;
     }
