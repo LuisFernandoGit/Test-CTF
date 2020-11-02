@@ -1,11 +1,11 @@
-#include "proceso.h"
+#include <proceso.h>
 
-proceso::proceso()
+Proceso::Proceso()
 {
 
 }
 
-void proceso::new_process(int ID)
+void Proceso::new_process(int ID)
 {
     this->ID = ID;
     this->TME = qrand() % 10 + 5;
@@ -13,7 +13,8 @@ void proceso::new_process(int ID)
 
     int no1 = qrand() % 10;
     int no2 = qrand() % 10;
-    switch (qrand() % 7) {
+    switch (qrand() % 7)
+    {
     case 0: // +
         result = no1 + no2;
         operation = QString::number(no1) + " + " + QString::number(no2);
@@ -54,12 +55,12 @@ void proceso::new_process(int ID)
     status = 0; //NUEVO
 }
 
-int proceso::getTR()
+int Proceso::getTR()
 {
     return TME - serviceTime;
 }
 
-void proceso::setBlockedTime(int time)
+void Proceso::setBlockedTime(int time)
 {
     blockedTime = time;
 }
