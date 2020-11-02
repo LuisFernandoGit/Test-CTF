@@ -1,6 +1,6 @@
-#include "memory.h"
+#include <memory.h>
 
-memory::memory()
+Memory::Memory()
 {
     type = 99;
     value = 0;
