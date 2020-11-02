@@ -1,5 +1,5 @@
-#include "datafill.h"
-#include "ui_datafill.h"
+#include <datafill.h>
+#include <ui_datafill.h>
 
 Datafill::Datafill(QWidget *parent) :
     QDialog(parent),
