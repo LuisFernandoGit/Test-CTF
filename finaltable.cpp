@@ -3,7 +3,7 @@
 
 Finaltable::Finaltable(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::finaltable)
+    ui(new Ui::Finaltable)
 {
     ui->setupUi(this);
     this->setWindowTitle("Tabla de procesos");
