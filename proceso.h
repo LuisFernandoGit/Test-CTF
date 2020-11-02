@@ -5,16 +5,24 @@
 
 using namespace std;
 
-class proceso
+class Proceso
 {
 public:
-    proceso();
+    Proceso();
 
-    int ID,TME,weight;
+    int ID;
+    int TME;
+    int weight;
     QString operation;
 
     float result;
-    int arrivalTime, endTime, returnTime, responseTime, waitTime, serviceTime, blockedTime;
+    int arrivalTime;
+    int endTime;
+    int returnTime;
+    int responseTime;
+    int waitTime;
+    int serviceTime;
+    int blockedTime;
     bool responseTimeFlag;
     int status;
 
