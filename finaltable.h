@@ -2,23 +2,23 @@
 #define FINALTABLE_H
 
 #include <QDialog>
-#include "processeslist.h"
+#include <processeslist.h>
 
 namespace Ui {
-class finaltable;
+class Finaltable;
 }
 
-class finaltable : public QDialog
+class Finaltable : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit finaltable(QWidget *parent = nullptr);
-    ~finaltable();
+    explicit Finaltable(QWidget *parent = nullptr);
+    ~Finaltable();
     void finishedProcessesTable(processesList finishedProcesses);
 
 private:
-    Ui::finaltable *ui;
+    Ui::Finaltable *ui;
 
     void prepareTable();
 
