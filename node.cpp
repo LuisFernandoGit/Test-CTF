@@ -1,6 +1,6 @@
-#include "node.h"
+#include <node.h>
 
-node::node(proceso process)
+Node::Node(proceso process)
 {
     this->process = process;
     previous = next = nullptr;
