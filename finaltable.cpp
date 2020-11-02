@@ -1,13 +1,7 @@
-#include "finaltable.h"
-#include "ui_finaltable.h"
+#include <finaltable.h>
+#include <ui_finaltable.h>
 
-#define FINISHED 0
-#define READY 1
-#define RUNNING 2
-#define BLOCKED 3
-#define ERROR 99
-
-finaltable::finaltable(QWidget *parent) :
+Finaltable::Finaltable(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::finaltable)
 {
@@ -16,12 +10,12 @@ finaltable::finaltable(QWidget *parent) :
     prepareTable();
 }
 
-finaltable::~finaltable()
+Finaltable::~Finaltable()
 {
     delete ui;
 }
 
-void finaltable::prepareTable()
+void Finaltable::prepareTable()
 {
     this->setGeometry(300,300,755,310);
     ui->finishedProcessesTable->setGeometry(10,10,738,290);
@@ -34,21 +28,26 @@ void finaltable::prepareTable()
     ui->finishedProcessesTable->setColumnWidth(0,35);
     ui->finishedProcessesTable->setColumnWidth(1,35);
     for (int i=2 ; i<10 ; i++ )
+    {
         ui->finishedProcessesTable->setColumnWidth(i,80);
+    }
     header.clear();
 }
 
-void finaltable::finishedProcessesTable(processesList processes)
+void Finaltable::finishedProcessesTable(processesList processes)
 {
     int row = 0;
     node *aux = processes.first;
-    while(aux){
+    while(aux)
+    {
         ui->finishedProcessesTable->insertRow(row);
         ui->finishedProcessesTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->finishedProcessesTable->setItem(row,1,new QTableWidgetItem(QString::number(aux->process.TME)));
         ui->finishedProcessesTable->setItem(row,2,new QTableWidgetItem(aux->process.operation));
-        if(aux->process.status == ERROR)
+        if(aux->process.status == 99) //ERROR = 99
+        {
             ui->finishedProcessesTable->setItem(row,3,new QTableWidgetItem("ERROR"));
+        }
         else
             ui->finishedProcessesTable->setItem(row,3,new QTableWidgetItem(QString::number(aux->process.result)));
 
@@ -61,12 +60,16 @@ void finaltable::finishedProcessesTable(processesList processes)
 
 
         for (int column=0 ; column<10 ; column++)
+        {
             ui->finishedProcessesTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
     for (int i=0; i<=row; i++)
+    {
         ui->finishedProcessesTable->removeRow(row);
+    }
 }
 
