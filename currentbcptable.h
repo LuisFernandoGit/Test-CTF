@@ -2,25 +2,25 @@
 #define CURRENTBCPTABLE_H
 
 #include <QDialog>
-#include "processeslist.h"
+#include <processeslist.h>
 
 namespace Ui {
-class currentBCPTable;
+class CurrentBCPTable;
 }
 
-class currentBCPTable : public QDialog
+class CurrentBCPTable : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit currentBCPTable(QWidget *parent = nullptr);
-    ~currentBCPTable();
+    explicit CurrentBCPTable(QWidget *parent = nullptr);
+    ~CurrentBCPTable();
 
     void loadMemoryTable(processesList running, processesList ready, processesList blocked,processesList news ,processesList finished,processesList x);
     void prepareTable();
 
 private:
-    Ui::currentBCPTable *ui;
+    Ui::CurrentBCPTable *ui;
 };
 
 #endif // CURRENTBCPTABLE_H
