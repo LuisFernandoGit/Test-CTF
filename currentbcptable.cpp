@@ -1,25 +1,26 @@
-#include "currentbcptable.h"
-#include "ui_currentbcptable.h"
+#include <currentbcptable.h>
+#include <ui_currentbcptable.h>
 
-currentBCPTable::currentBCPTable(QWidget *parent) :
+CurrentBCPTable::CurrentBCPTable(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::currentBCPTable)
+    ui(new Ui::CurrentBCPTable)
 {
     ui->setupUi(this);
     this->setWindowTitle("Tabla de procesos");
     prepareTable();
 }
 
-currentBCPTable::~currentBCPTable()
+CurrentBCPTable::~CurrentBCPTable()
 {
     delete ui;
 }
 
-void currentBCPTable::loadMemoryTable(processesList running, processesList ready, processesList blocked,processesList news ,processesList finished,processesList suspended)
+void CurrentBCPTable::loadMemoryTable(processesList running, processesList ready, processesList blocked,processesList news ,processesList finished,processesList suspended)
 {
     int row = 0;
     node *aux = running.first;
-    while(aux){
+    while(aux)
+    {
         ui->BCPTable->insertRow(row);
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("PROCESANDO"));
@@ -33,14 +34,17 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,9,new QTableWidgetItem(QString::number(aux->process.getTR())));
         ui->BCPTable->setItem(row,10,new QTableWidgetItem(QString::number(aux->process.responseTime)));
         for (int column=0 ; column<11 ; column++)
+        {
                 ui->BCPTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
 
     aux = ready.first;
-    while(aux){
+    while(aux)
+    {
         ui->BCPTable->insertRow(row);
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("LISTO"));
@@ -53,18 +57,25 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,8,new QTableWidgetItem(QString::number(aux->process.serviceTime)));
         ui->BCPTable->setItem(row,9,new QTableWidgetItem(QString::number(aux->process.getTR())));
         if(aux->process.responseTime != -1)
+        {
             ui->BCPTable->setItem(row,10,new QTableWidgetItem(QString::number(aux->process.responseTime)));
+        }
         else
+        {
             ui->BCPTable->setItem(row,10,new QTableWidgetItem("-"));
+        }
         for (int column=0 ; column<11 ; column++)
+        {
                 ui->BCPTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
 
     aux = blocked.first;
-    while(aux){
+    while(aux)
+    {
         ui->BCPTable->insertRow(row);
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("BLOQUEADO: " + QString::number(aux->process.blockedTime)));
@@ -79,14 +90,17 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,10,new QTableWidgetItem(QString::number(aux->process.responseTime)));
 
         for (int column=0 ; column<11 ; column++)
+        {
                 ui->BCPTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
 
     aux = suspended.first;
-    while(aux){
+    while(aux)
+    {
         ui->BCPTable->insertRow(row);
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("Suspendido: " + QString::number(aux->process.blockedTime)));
@@ -101,14 +115,17 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,10,new QTableWidgetItem(QString::number(aux->process.responseTime)));
 
         for (int column=0 ; column<11 ; column++)
+        {
                 ui->BCPTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
 
     aux = news.first;
-    while(aux){
+    while(aux)
+    {
         ui->BCPTable->insertRow(row);
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("NUEVO"));
@@ -123,22 +140,29 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,10,new QTableWidgetItem("-"));
 
         for (int column=0 ; column<11 ; column++)
+        {
                 ui->BCPTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
 
     aux = finished.first;
-    while(aux){
+    while(aux)
+    {
         ui->BCPTable->insertRow(row);
         ui->BCPTable->setItem(row,0,new QTableWidgetItem(QString::number(aux->process.ID)));
         ui->BCPTable->setItem(row,1,new QTableWidgetItem("FINALIZADO"));
         ui->BCPTable->setItem(row,2,new QTableWidgetItem(aux->process.operation));
-        if(aux->process.status == 99)
+        if(aux->process.status == 99) //ERROR = 99
+        {
             ui->BCPTable->setItem(row,3,new QTableWidgetItem("ERROR"));
+        }
         else
+        {
             ui->BCPTable->setItem(row,3,new QTableWidgetItem(QString::number(aux->process.result)));
+        }
         ui->BCPTable->setItem(row,4,new QTableWidgetItem(QString::number(aux->process.arrivalTime)));
         ui->BCPTable->setItem(row,5,new QTableWidgetItem(QString::number(aux->process.endTime)));
         ui->BCPTable->setItem(row,6,new QTableWidgetItem(QString::number(aux->process.returnTime)));
@@ -148,17 +172,21 @@ void currentBCPTable::loadMemoryTable(processesList running, processesList ready
         ui->BCPTable->setItem(row,10,new QTableWidgetItem(QString::number(aux->process.responseTime)));
 
         for (int column=0 ; column<11 ; column++)
+        {
                 ui->BCPTable->item(row,column)->setTextAlignment(Qt::AlignCenter);
+        }
 
         row++;
         aux = aux->next;
     }
 
     for (int i=0; i<=row; i++)
+    {
         ui->BCPTable->removeRow(row);
+    }
 }
 
-void currentBCPTable::prepareTable()
+void CurrentBCPTable::prepareTable()
 {
     this->setGeometry(300,300,880,320);
     ui->BCPTable->setGeometry(10,10,860,300);
@@ -172,6 +200,8 @@ void currentBCPTable::prepareTable()
     ui->BCPTable->setColumnWidth(0,35);
     ui->BCPTable->setColumnWidth(1,90);
     for (int i=2 ; i<11 ; i++ )
+    {
         ui->BCPTable->setColumnWidth(i,80);
+    }
     header.clear();
 }
